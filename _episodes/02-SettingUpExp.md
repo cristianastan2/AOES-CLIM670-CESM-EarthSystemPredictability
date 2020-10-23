@@ -75,6 +75,6 @@ Build and run your case.
 ~~~
 qcmd -- ./case.build
 ./case.submit
-~~
+~~~
 {: .language-bash}
 
