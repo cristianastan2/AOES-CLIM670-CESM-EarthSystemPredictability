@@ -76,6 +76,16 @@ $ ./xmlchange STOP_N=45
 ~~~
 {: .language-bash}
 
+### Configure out namelists for daily+ output (and a few other configurations)
+
+We will configure our namelists based on existing namelist files, so copy the `user_nl_*` files from my case to yours:
+ 
+~~~
+$ cp /glade/u/home/kpegion/cases/cesm2fcst/user_nl_* ~/cases/YOURCASE 
+~~~
+{: .language-bash}
+
+
 ### Build and run your case.
 
 ~~~
