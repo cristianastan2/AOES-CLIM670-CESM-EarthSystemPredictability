@@ -79,8 +79,8 @@ $ ./xmlchange STOP_N=45
 ### Build and run your case.
 
 ~~~
-qcmd -- ./case.build
-./case.submit
+$ qcmd -- ./case.build
+$ ./case.submit
 ~~~
 {: .language-bash}
 
