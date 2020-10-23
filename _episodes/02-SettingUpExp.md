@@ -17,7 +17,7 @@ $ ./create_newcase --case ~/cases/cesm2fcst --compset BSSP585 --res f09_g17 --pr
 ~~~
 {: .language-bash}
 
-Go to our new case directory and run `case.setup`
+### Go to our new case directory and run `case.setup`
 
 ~~~
 $ cd ~/cases/cesm2fcst
@@ -25,12 +25,16 @@ $ ./case.setup
 ~~~
 {: .language-bash}
 
-Let's configure out run:
+### Configure our run
+
+This configuration step is needed (need to explain why)
 
 ~~~
 $ ./xmlchange --force CLM_NAMELIST_OPTS=use_init_interp=.true.
 ~~~
 {: .language-bash}
+
+### Configure our initial conditions
 
 Our forecast will start on Jan 7, 2019 and run for 45 days. We first need to setup and tell it where to find our initial conditions.  We have 21 ensemble members where the Atmosphere Initial conditions have been slightly perturbed.  Each of you will run a different ensemble member, so each of you needs to get the correct initial conditions for your ensemble member.
 
@@ -60,6 +64,8 @@ $ ./xmlchange RUN_REFCASE=b.e21.f09_g17
 ~~~
 {: .language-bash}
 
+### Configure our startdate, refdate and run length
+
 Now we need to give it the correct `RUN_STARTDATE`, `RUN_REFDATE`, `STOP_OPTION`, and `STOP_N`
 
 ~~~
@@ -70,7 +76,7 @@ $ ./xmlchange STOP_N=45
 ~~~
 {: .language-bash}
 
-Build and run your case.
+### Build and run your case.
 
 ~~~
 qcmd -- ./case.build
