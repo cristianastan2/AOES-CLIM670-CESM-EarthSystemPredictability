@@ -131,3 +131,5 @@ $ ./sstfcsts.sh
 
 
 It will take a few minutes to run since it had to do everything and build the model.  If it fails to build, you will get an error.
+
+Want to learn more about unix commands and shell scripting?  See the [Software carpentry tutorial](http://swcarpentry.github.io/shell-novice/)
