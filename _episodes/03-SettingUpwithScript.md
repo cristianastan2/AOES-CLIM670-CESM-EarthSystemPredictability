@@ -1,5 +1,5 @@
 ---
-title: "Initialized Prediction"
+title: "An Initialized Prediction Experiment"
 questions:
 - "How to setup an Initialized Prediction Experiment"
 - "How to setup an experiment with your own script"
@@ -115,3 +115,19 @@ Which to use is a matter of personal preference.  You will likely see bash shell
 
 We will write the script together.  A copy is located here: `~kpegion/case_scripts/s2sfcsts.sh`
 
+Once your script is ready, you can make is executable.
+
+~~~
+$ chmod +x s2sfcsts.sh
+~~~
+{: .language-bash}
+
+and run it
+
+~~~
+$ ./sstfcsts.sh
+~~~
+{: .language-bash}
+
+
+It will take a few minutes to run since it had to do everything and build the model.  If it fails to build, you will get an error.
