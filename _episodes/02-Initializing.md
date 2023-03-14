@@ -25,12 +25,12 @@ To setup experiments with CESM, we setup and configure the following things:
 Initial conditions tell the model what state to start from.  The files that contain this information are called restart and intial condition files.  They represent an instantanous state of each model component at a given time. There are multiple restarts for each componenet of the model.  
 
 
-#### Initial Conditions in our B1850 simulation (Assignment #2)
+#### Initial Conditions in our B1850 simulation (Assignment #3)
 
 Let's take a look at the initial conditions we used for some of our previous experiments:
 
 ~~~
-$ cd /glade/u/home/kpegion/cases/test1
+$ cd /glade/u/home/cstan/cases/b.day1.0
 $ ./xmlquery RUN_TYPE,RUN_STARTDATE,RUN_REFDATE,RUN_REFCASE,GET_REFCASE,RUN_REFDIR
 ~~~
 {: .language-bash}
@@ -48,7 +48,7 @@ Results in group run_begin_stop_restart
 
 `RUN_TYPE=hybrid`, so this indicates the information in the other variables need to be set and that this run uses initial conditions from another CESM run to start it.
 
-`GET_REFCASE=TRUE` means that the code will get the initial condition/restart files for you from the `RUN_REFDIR`. If it is FASLE, we have to "stage" (meaning copy) the initial condition/restart files in the case run directory ourselves. As an example, we did this in Assignment #3.
+`GET_REFCASE=TRUE` means that the code will get the initial condition/restart files for you from the `RUN_REFDIR`. If it is FASLE, we have to "stage" (meaning copy) the initial condition/restart files in the case run directory ourselves. As an example, we did this in Assignment #4.
 
 `RUN_REFDIR` is set to the default value of `cesm2_init`. This is a preset directory of initial condition files for starting CESM2 simulations. The full path is:
 `/glade/p/cesmdata/cseg/inputdata/cesm2_init/`
@@ -92,7 +92,7 @@ So what does `RUN_STARTDATE` do?
 Even though the restarts we start from begin on 0003-01-01, we can tell the model to begin our experiment with whatever we want the startdate to be.  This is because our simulation does not need to match any specific, real date. You can see in my experiment that the `RUN_STARTDATE` is set to `0001-01-01` and the output begins at that date:
 
 ~~~
-$ cd /glade/scratch/kpegion/archive/test1/atm/hist
+$ cd /glade/scratch/cstan/archive/b.day1.0/atm/hist
 $ ls -lt
 ~~~
 {: .language-bash}
@@ -100,14 +100,14 @@ $ ls -lt
 *Important Note: You can specify a new startdate for your run if the RUN_TYPE=hybrid.  You cannot do this if your RUN_TYPE=branch.*
 
 
-#### Initial Conditions in our Added Heating Experiments (Assignment #4)
+#### Initial Conditions in our Added Heating Experiments (Assignment #5)
 
 In the previous example, all this initial condition information was set for us by default as part of the compset definition.  We did not have to set any of this ourselves.
 
-In our added heating experiments (Assignment #4), we set this up ourselves using Dr. Swenson's scripts.  Let's take a look:
+In our added heating experiments (Assignment #5), we set this up ourselves using Dr. Swenson's scripts.  Let's take a look:
 
 ~~~
-$ cd /glade/u/home/kpegion/cases/addheat3
+$ cd /glade/u/home/cstan/cases/addheat
 $ ./xmlquery RUN_TYPE,RUN_STARTDATE,RUN_REFDATE,RUN_REFCASE,GET_REFCASE,RUN_REFDIR
 ~~~
 {: .language-bash}
@@ -146,25 +146,25 @@ cp $refdir/* $ptmp/$expname/run/
 
 This resolves to:
 
-`cp /glade/scratch/kpegion/archive/test1/rest/0005-01-01-00000/* /glade/scratch/kpegion/addheat3/run/`
+`cp /glade/scratch/cstan/archive/b.day1.0/rest/0005-01-01-00000/* /glade/scratch/cstan/addheat/run/`
 
 We copied the restart files from the restart directory to the run directory for our new case.  
 
 ~~~
-ls /glade/scratch/kpegion/addheat3/run/
+ls /glade/scratch/cstan/addheat/run/
 ~~~
 {: .language-bash}
 
 ~~~
-CASEROOT              rpointer.rof                      test1.clm2.r.0005-01-01-00000.nc
-rpointer.atm          test1.cam.h0.0004-12.nc           test1.clm2.rh0.0005-01-01-00000.nc
-rpointer.drv          test1.cam.h1.0005-01-01-00000.nc  test1.cpl.r.0005-01-01-00000.nc
-rpointer.glc          test1.cam.i.0005-01-01-00000.nc   test1.mosart.h0.0004-12.nc
-rpointer.ice          test1.cam.r.0005-01-01-00000.nc   test1.mosart.r.0005-01-01-00000.nc
-rpointer.lnd          test1.cam.rs.0005-01-01-00000.nc  test1.mosart.rh0.0005-01-01-00000.nc
-rpointer.ocn.ovf      test1.cice.r.0005-01-01-00000.nc  test1.pop.r.0005-01-01-00000.nc
-rpointer.ocn.restart  test1.cism.r.0005-01-01-00000.nc  test1.pop.ro.0005-01-01-00000
-rpointer.ocn.tavg.5   test1.clm2.h0.0004-12.nc          test1.ww3.r.0005-01-01-00000
+CASEROOT              rpointer.rof                      b.day1.0.clm2.r.0005-01-01-00000.nc
+rpointer.atm          b.day1.0.cam.h0.0004-12.nc           b.day1.0.clm2.rh0.0005-01-01-00000.nc
+rpointer.drv          b.day1.0.cam.h1.0005-01-01-00000.nc  b.day1.0.cpl.r.0005-01-01-00000.nc
+rpointer.glc          b.day1.0.cam.i.0005-01-01-00000.nc   b.day1.0.mosart.h0.0004-12.nc
+rpointer.ice          b.day1.0.cam.r.0005-01-01-00000.nc   b.day1.0.mosart.r.0005-01-01-00000.nc
+rpointer.lnd          b.day1.0.cam.rs.0005-01-01-00000.nc  b.day1.0.mosart.rh0.0005-01-01-00000.nc
+rpointer.ocn.ovf      b.day1.0.cice.r.0005-01-01-00000.nc  b.day1.0.pop.r.0005-01-01-00000.nc
+rpointer.ocn.restart  b.day1.0.cism.r.0005-01-01-00000.nc  b.day1.0.pop.ro.0005-01-01-00000
+rpointer.ocn.tavg.5   b.day1.0.clm2.h0.0004-12.nc          b.day1.0.ww3.r.0005-01-01-00000
 ~~~
 {: .output}
 
