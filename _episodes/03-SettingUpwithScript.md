@@ -112,9 +112,9 @@ Since the run is short, we can reduce the wallclock times the run and archiving:
 
 ## Setup Experiment with a script
 
-Go to your home directory and create a case_scripts directory.
+Go to your home directory and create a scripts directory.
 
-Go to your case_scripts directory, create a file called `s2sfcsts.sh` and open it in your preferred editor..
+Go to your scripts directory, create a file called `s2sfcsts.sh` and open it in your preferred editor..
 
 The `.sh` indicates that we will write a `bash` shell script.  A bash shell script is a collection of Unix commands combined with a set of syntax rules for assigning variables and making loops and conditionals.   
 
