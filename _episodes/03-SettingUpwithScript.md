@@ -31,7 +31,7 @@ Since we will initialize on Jan 7, 2019, we will use the `BSSP585` compset.
 
 #### Namelist Configurations
 
-To meet the output requirements of the SubX protocol, we will want to set the namelists to give us daily data for many variables and some additional variables that are not default in CESM.  The namelist files can be copied from my experiment directory: `~kpegion/cases/s2sfcst/user_nl_*`
+To meet the output requirements of the SubX protocol, we will want to set the namelists to give us daily data for many variables and some additional variables that are not default in CESM.  The namelist files can be copied from my experiment directory: `~cstan/cases/s2sfcst/user_nl_*`
 
 #### Initial Conditions
 
@@ -39,10 +39,10 @@ It is not easy or advisable to make your own initial conditions for each compone
 
 The experiment will be a hybrid run (`RUN_TYPE=hybrid`) in which the initial conditions are staged by the user (`GET_REFCASE=FALSE`).  They are located in:
 
-`/glade/scratch/kpegion/fcst/rest/2019-01-07/`
+`/glade/scratch/cstan/fcst/rest/2019-01-07/`
 
 ~~~
-$ ls /glade/scratch/kpegion/fcst/rest/2019-01-07/
+$ ls /glade/scratch/cstan/fcst/rest/2019-01-07/
 ~~~
 {: .language-bash}
 
@@ -122,7 +122,7 @@ The `.sh` indicates that we will write a `bash` shell script.  A bash shell scri
 
 Which to use is a matter of personal preference.  You will likely see bash shell (`.sh`) more often than c-shell (`.csh`), so I will show you how to write a bash shell script.
 
-We will write the script together.  A copy is located here on Cheyenne for reference: `~kpegion/case_scripts/s2sfcsts.sh`
+We will write the script together.  A copy is located here on Cheyenne for reference: `~cstan/scripts/s2sfcsts.sh`
 
 Once your script is ready, you can make is executable.
 
