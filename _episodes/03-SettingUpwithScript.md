@@ -134,7 +134,7 @@ $ chmod +x s2sfcsts.sh
 and run it
 
 ~~~
-$ ./sstfcsts.sh
+$ ./s2sfcsts.sh
 ~~~
 {: .language-bash}
 
