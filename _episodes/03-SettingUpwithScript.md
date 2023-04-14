@@ -76,7 +76,7 @@ The model will look for restart files that begin with the name `RUN_REFCASE`, bu
 
 #### SourceMods
 
-There are changes to source code in this run.  We will need to copy the new SourceMods from my experiment directory `~kpegion/cases/s2sfcst/SourceMods/` to the SourceMods in the experiment directory.
+There are changes to source code in this run.  We will need to copy the new SourceMods from my experiment directory `~cstan/cases/s2sfcst/SourceMods/` to the SourceMods in the experiment directory.
 
 #### Configuration changes in `env_run.xml`
 
